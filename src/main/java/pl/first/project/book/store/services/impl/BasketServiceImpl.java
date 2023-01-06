@@ -33,7 +33,8 @@ public class BasketServiceImpl implements IBasketService {
             }
         }*/
 
-        if(basket.stream().filter(op -> op.getBook().getId() == id)
+        if(basket.stream()
+                .filter(op -> op.getBook().getId() == id)
                 .peek(op -> op.setQuantity(op.getQuantity() + 1))
                 .findFirst().isPresent()) {
             return;

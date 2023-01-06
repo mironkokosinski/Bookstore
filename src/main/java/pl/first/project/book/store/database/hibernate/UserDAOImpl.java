@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import pl.first.project.book.store.database.IUserDAO;
 import pl.first.project.book.store.model.User;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
+@Component("UserDAOImpl")
 public class UserDAOImpl implements IUserDAO {
     @Autowired
     SessionFactory sessionFactory;

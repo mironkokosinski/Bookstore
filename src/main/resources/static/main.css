@@ -1,6 +1,6 @@
 #logo {
-    width: 200px;
-    margin: 0 auto;
+    width: 300px;
+    margin: 50px auto;
     display: block;
 }
 
@@ -10,17 +10,17 @@
 
 #menu {
     text-align: center;
-    border-bottom: 1px solid black;
-    height: 35px;
+    border-bottom: 3px solid black;
+    height: 80px;
 }
 
 #menu a {
-    font-size: 20px;
+    font-size: 25px;
     color: black;
     text-decoration: none;
     margin: 5px 15 px;
     padding: 5px 10px;
-    border-radius: 2px;
+    border-radius: 1px;
     transition: color, background 0.5s;
 }
 
@@ -45,33 +45,45 @@
 
 .book{
     margin: 15px 0px;
-    padding: 10px;
+    padding: 20px;
     width: 100%;
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 5px;
     text-align: left;
     cursor: pointer;
-    transition: color 0.5s;
     transition: border 0.5s;
+    transition: color 0.5s;
+
 }
 
 .book:hover {
     color: indianred;
-    border: 1px solid indianred;
+    border: 3px solid indianred;
 }
 
 .book .title {
-    font-size: 26px;
+    font-size: 30px;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .book .author {
-    font-size: 22px;
+    font-size: 25px;
+    margin: 10px 0px;
+}
+
+.book .publishing {
+    font-size: 25px;
     margin: 10px 0px;
 }
 
 .book .description {
-    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: none;
+    font-family: Big Shoulders Text;
+
 }
 
 .book div .price {
@@ -101,8 +113,8 @@
     margin-top: 10px;
 }
 
-.add-to-button {
-    display: inline-block;
+.add-to-basket-button {
+    text-align: right;
     font-size: 17px;
     margin-left: 50px;
 }

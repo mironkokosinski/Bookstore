@@ -32,11 +32,15 @@ public class OrderServiceImpl implements IOrderService {
     @Autowired
     IEntitySever entitySever;
 
+    /*linijka 40 -> petla, ktora usuwa nadliczbowe ilosci ksiazek ponad stan quantity.
+    Flag jest po to, żeby ominąc glupie return.
+    linijka 62 -> Po zrobieniu ordera ilosc ksiazek w mainie odpowiednio spada z uwzglednieniem aktualnego stanu,
+    od ktorego sie odejmuje. Chodzi o to, ze jak jeden uzytkownik klika order,
+    to drugi juz moze miec w koszyku za duzo.*/
     @Override
     public void confirmOrder() {
         Set<OrderPosition> basket = this.sessionObject.getBasket();
-//petla, ktora usuwa nadliczbowe ilosci ksiazek ponad stan quantity.
-//Flag jest po to, żeby ominąc glupie return.
+
         boolean flag = false;
         Iterator<OrderPosition> iterator = basket.iterator();
         while(iterator.hasNext()) {
@@ -57,9 +61,6 @@ public class OrderServiceImpl implements IOrderService {
         order.setOrderPositions(basket);
 
         this.entitySever.persistEntity(order);
-//Po zrobieniu ordera ilosc ksiazek w mainie odpowiednio spada z uwzglednieniem aktualnego stanu,
-// od ktorego sie odejmuje. Chodzi o to, ze jak jeden uzytkownik klika order,
-// to drugi juz moze miec w koszyku za duzo.
         for(OrderPosition orderPosition : basket) {
             Book book = this.bookDAO.getBookById(orderPosition.getBook().getId()).get();
             book.setQuantity(book.getQuantity() - orderPosition.getQuantity());

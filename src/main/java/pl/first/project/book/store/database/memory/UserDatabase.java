@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Component("UserDatabase")
 public class UserDatabase implements IUserDAO {
     private List<User> users = new ArrayList<>();
 

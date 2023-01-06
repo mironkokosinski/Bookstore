@@ -1,6 +1,8 @@
 input {
     font-size: 24px;
-    border: 1px solid black;
+    font-family: Big Shoulders Text, ExtraBold800;
+    color: #858585;
+    border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
     text-align: center;

@@ -41,7 +41,7 @@ public class OrderPositionDAOImpl implements IOrderPositionDAO {
     }
 
     @Override
-    public List<OrderPosition> getAllOrderPosition() {
+    public List<OrderPosition> getAllOrderPositions() {
         throw new NotImplementedException();
     }
 

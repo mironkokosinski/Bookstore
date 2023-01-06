@@ -26,7 +26,6 @@ public class OrderDAOImpl implements IOrderDAO {
             tx = session.beginTransaction();
             session.save(order);
             tx.commit();
-            session.close();
         } catch (Exception e) {
             if(tx != null) {
                 tx.rollback();
@@ -42,7 +41,6 @@ public class OrderDAOImpl implements IOrderDAO {
         try {
             Query<Order> query = session.createQuery("FROM pl.first.project.book.store.model.Order WHERE id = :id");
             query.setParameter("id", id);
-            query.getResultList();
             Order result = query.getSingleResult();
             session.close();
             return Optional.of(result);
@@ -69,7 +67,6 @@ public class OrderDAOImpl implements IOrderDAO {
             tx = session.beginTransaction();
             session.update(order);
             tx.commit();
-            session.close();
         } catch (Exception e) {
             if(tx != null) {
                 tx.rollback();
@@ -89,9 +86,8 @@ public class OrderDAOImpl implements IOrderDAO {
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            session.delete(id);
+            session.delete(orderBox.get());
             tx.commit();
-            session.close();
         } catch (Exception e) {
             if(tx != null) {
                 tx.rollback();
@@ -105,7 +101,7 @@ public class OrderDAOImpl implements IOrderDAO {
     public List<Order> getOrdersByUserId(int id) {
         Session session = this.sessionFactory.openSession();
         Query<Order> query = session.createQuery("FROM pl.first.project.book.store.model.Order WHERE user_id = :userId");
-        query.setParameter("user_id", id);
+        query.setParameter("userId", id);
         List<Order> result = query.getResultList();
         session.close();
         return result;

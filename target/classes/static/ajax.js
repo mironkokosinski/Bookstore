@@ -3,7 +3,7 @@ function addToBasket(id) {
         url: "http://localhost:8080/api/basket/" + id,
         method: "GET"
     })
-    .done(res => {
+    .done(wynik => {
 
     });
 }
@@ -23,12 +23,11 @@ function ajax() {
 
     $.ajax({
         url: "http://localhost:8080/api/book/5",
-        method: "PUT"
+        method: "PUT",
         dataType: "json",
-        contentType: "application/jason",
+        contentType: "application/json",
         data: JSON.stringify(book)
     })
-
     .done(response => {
         console.log(response.id);
         console.log(response.title);

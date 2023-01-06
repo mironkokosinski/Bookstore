@@ -2,17 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
+    <style>
+      body {
+        font-family: 'Bebas Neue';
+      }
+    </style>
     <title>Title</title>
 </head>
-<body>
+<body bgcolor="#d1d1d1">
 <div id="menu" th:fragment="menu">
-  <a href="/main">Strona Główna</a>
-  <a href="/contact">Kontakt</a>
-  <a href="/basket" th:if="${logged == true}">Koszyk</a>
+    <a href="/main">Strona Główna</a>
+    <a href="/contact">Kontakt</a>
+    <a href="/basket" th:if="${logged == true}">Koszyk</a>
     <a href="/order" th:if="${logged == true}">Zamówienia</a>
-  <a href="/login" th:if="${logged == false}">Login</a>
-  <a href="/logout" th:if="${logged == true}">Wyloguj</a>
-  <div th:if="${logged == true}" th:text="'Zalogowany jako: ' + ${user.login}" id="user-login"></div>
+    <a href="/login" th:if="${logged == false}">Login</a>
+    <a href="/logout" th:if="${logged == true}">Wyloguj</a>
+    <div th:if="${logged == true}" th:text="'Zalogowany jako: ' + ${user.login}" id="user-login"></div>
 </div>
 
 <a href="/main" id="logo" th:fragment="logo">

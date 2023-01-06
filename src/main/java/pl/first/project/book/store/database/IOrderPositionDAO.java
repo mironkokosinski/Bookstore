@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface IOrderPositionDAO {
     void persistOrderPosition(OrderPosition orderPosition);
     Optional<OrderPosition> getOrderPositionById(int id);
-    List<OrderPosition> getAllOrderPosition();
+    List<OrderPosition> getAllOrderPositions();
     void updateOrderPosition(OrderPosition orderPosition);
     void deleteOrderPosition(int id);
     List<OrderPosition> getOrderPositionsByOrderId(int id);

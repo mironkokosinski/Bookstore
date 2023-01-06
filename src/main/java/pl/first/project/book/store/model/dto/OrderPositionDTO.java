@@ -20,7 +20,7 @@ public class OrderPositionDTO {
     public OrderPositionDTO(OrderPosition orderPosition) {
         this.id = orderPosition.getId();
         this.quantity = orderPosition.getQuantity();
-        this.book = Constans.host + "/api/orderPosition/"+orderPosition.getId();
+        this.book = Constans.host + "/api/book/"+orderPosition.getId();
     }
 
     public int getId() {

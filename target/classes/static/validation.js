@@ -1,4 +1,4 @@
-function validationLoginForm() {
+function validateLoginForm() {
     var login = document.getElementById("login");
     var password = document.getElementById("password");
 
@@ -15,15 +15,15 @@ function validationLoginForm() {
 
     if(password.value.length < 5) {
         result = false;
-        login.style.background = "#cd5c5c";
+        password.style.background = "#cd5c5c";
     } else {
-        login.style.background = "#ffffff";
+        password.style.background = "#ffffff";
     }
 
     return result;
 }
 
-function validationLoginForm() {
+function validateRegisterForm() {
     var login = document.getElementById("login");
     var password = document.getElementById("password");
     var password2 = document.getElementById("password2");

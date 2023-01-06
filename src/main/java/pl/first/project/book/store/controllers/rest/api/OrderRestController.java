@@ -43,19 +43,17 @@ public class OrderRestController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public OrdersResponse getOrders(@RequestParam(required = false) Integer userId) {
         OrdersResponse ordersResponse = new OrdersResponse();
+        List<OrderDTO> dtoOrders = new ArrayList<>();
         if(userId == null) {
-            List<OrderDTO> dtoOrders = new ArrayList<>();
             for(Order order : this.orderDAO.getAllOrders()) {
                 dtoOrders.add(new OrderDTO(order));
             }
-            ordersResponse.setOrders(dtoOrders);
         } else {
-            List<OrderDTO> dtoOrders = new ArrayList<>();
             for(Order order : this.orderDAO.getOrdersByUserId(userId)) {
                 dtoOrders.add(new OrderDTO(order));
             }
-            ordersResponse.setOrders(dtoOrders);
         }
+        ordersResponse.setOrders(dtoOrders);
         return ordersResponse;
     }
 

@@ -3,6 +3,7 @@ package pl.first.project.book.store.services.impl;
 import org.apache.commons.codec.cli.Digest;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ import java.util.Optional;
 public class AuthenticationService implements IAuthenticationService {
 
     @Autowired
+    @Qualifier("UserDatabase")
     IUserDAO userDAO;
 
     @Autowired

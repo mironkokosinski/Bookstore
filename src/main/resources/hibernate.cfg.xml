@@ -15,11 +15,11 @@
         <property name="hibernate.hbm2ddl.auto">none</property>
         <property name="connection.pool_size">20</property>
 
-        <mapping class="pl.camp.it.book.store.model.User"/>
-        <mapping class="pl.camp.it.book.store.model.Book"/>
-        <mapping class="pl.camp.it.book.store.model.Order"/>
-        <mapping class="pl.camp.it.book.store.model.OrderPosition"/>
+        <mapping class="pl.first.project.book.store.model.User"/>
+        <mapping class="pl.first.project.book.store.model.Book"/>
+        <mapping class="pl.first.project.book.store.model.Order"/>
+        <mapping class="pl.first.project.book.store.model.OrderPosition"/>
 
-        <!--<mapping package="pl.camp.it.book.store.model"/>-->
+        <!--<mapping package="pl.first.project.book.store.model"/>-->
     </session-factory>
 </hibernate-configuration>

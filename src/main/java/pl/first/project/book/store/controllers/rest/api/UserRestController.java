@@ -3,6 +3,7 @@ package pl.first.project.book.store.controllers.rest.api;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import java.util.Optional;
 public class UserRestController {
 
     @Autowired
+    @Qualifier("UserDatabase")
     IUserDAO userDAO;
 
     @RequestMapping(value = "", method = RequestMethod.GET)

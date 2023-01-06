@@ -27,7 +27,7 @@ public class OrderDTO {
 
     public OrderDTO(Order order) {
         this.id = order.getId();
-        this.user = Constans.host + "/api/user/" + order.getUser().getId();
+        this.user = Constans.host + "/api/user/" + order.getUser().getLogin();
         this.status = order.getStatus();
         this.date = order.getDate();
         for(OrderPosition orderPosition : order.getOrderPositions()) {

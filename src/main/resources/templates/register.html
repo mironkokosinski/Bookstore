@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="/form.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
+    <style>
+      body {
+        font-family: 'Bebas Neue';
+      }
+    </style>
     <script src="/validation.js"></script>
     <title>BookStore</title>
 </head>
@@ -11,7 +17,7 @@
 <div th:replace="fragments.html :: logo"></div>
 <div th:replace="fragments.html :: menu"></div>
 <div id="content">
-    <form method="post" onsubmit="return validationLoginForm()">
+    <form method="post" onsubmit="return validateRegisterForm()">
         <input type="text" placeholder="Login" th:field="*{userModel.login}" id="login">
         <input type="password" placeholder="Hasło" th:field="*{userModel.password}" id="password">
         <input type="password" placeholder="Powtórz hasło" name="password2" id="password2">

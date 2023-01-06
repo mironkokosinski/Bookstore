@@ -47,7 +47,6 @@ public class OrderController {
         if(orderBox.isPresent()) {
             Set<OrderPosition> orderPositionList = orderBox.get().getOrderPositions();
             model.addAttribute("order", orderBox.get());
-            model.addAttribute("orderPositions", orderPositionList);
             model.addAttribute("orderSum", this.orderService.calculateOrderSum(new ArrayList<>(orderPositionList)));
             return "order";
         }

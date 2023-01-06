@@ -18,7 +18,7 @@ public class OrderPositionDAOStub implements IOrderPositionDAO {
     }
 
     @Override
-    public List<OrderPosition> getAllOrderPosition() {
+    public List<OrderPosition> getAllOrderPositions() {
         return null;
     }
 
